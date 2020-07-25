@@ -27,7 +27,10 @@ def clicked():
         clicks = obj.get('clicks')
         clicks = clicks + 1
         try:
-            col.update_one({'_id':ObjectId(post_id)}, {'$set': {"clicks": clicks}}, multi=True)
+            col.update_one({'_id':ObjectId(post_id)}, {'$set': {"clicks": clicks}})
+        except Exception as e:
+            print (str(e))
+            return "Some error occurred"
     # col.update({}, {'$set': {"clicks": 0}}, multi=True)
     
     return "Success"
