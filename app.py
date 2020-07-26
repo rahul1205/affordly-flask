@@ -6,6 +6,7 @@ from bson.objectid import ObjectId
 
 
 app=Flask(__name__)
+CORS(app)
 mongo_client = pymongo.MongoClient("mongodb+srv://affordly:affordly123@cluster0.lzi2l.mongodb.net/affordly?retryWrites=true&w=majority")
 
 nosql_db = mongo_client["affordly"]
