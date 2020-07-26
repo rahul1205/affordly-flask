@@ -39,7 +39,7 @@ def clicked():
 def trending():
     objects = col.find().sort([("clicks",-1)])
     return_dict = []
-    for x in objects:
+    for x in objects[:3]:
         idn = x.get('_id')
         image = x.get('img')
         return_dict.append({"id":str(idn), "image":image})
