@@ -38,9 +38,9 @@ def clicked():
 
 @app.route('/trending', methods=['GET'])
 def trending():
-    objects = col.find().sort([("clicks",-1)])
+    objects = col.find({"isActive":True}).sort([("clicks",-1)])
     return_dict = []
-    for x in objects[:3]:
+    for x in objects:
         idn = x.get('_id')
         image = x.get('img')
         return_dict.append({"id":str(idn), "image":image})
