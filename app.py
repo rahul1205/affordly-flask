@@ -23,12 +23,12 @@ col = nosql_db["posts"]
 
 
 @app.route('/clicked', methods=['GET'])
+def clicked():
     """
     End point to increase number of clicks per view
     -- Require param: post_id
     -- Returns: Success or Exception
     """
-def clicked():
     post_id=request.args['post_id']
     if not post_id:
         return "Please speccify a correct ID"
@@ -50,12 +50,12 @@ def clicked():
 
 
 @app.route('/trending', methods=['GET'])
+def trending():
     """
     End point to fetch trending items
     -- Require param: None
     -- Returns: List of id and images of trending items
     """
-def trending():
     objects = col.find({"isActive":True}).sort([("clicks",-1)])
     return_dict = []
     for x in objects[:3]:
