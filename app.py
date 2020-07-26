@@ -14,7 +14,7 @@ import pymongo
 from bson.objectid import ObjectId
 
 app=Flask(__name__)
-CsORS(app) # Allowed cross origin
+CORS(app) # Allowed cross origin
 
 # Mongo connector
 mongo_client = pymongo.MongoClient("mongodb+srv://affordly:affordly123@cluster0.lzi2l.mongodb.net/affordly?retryWrites=true&w=majority")
