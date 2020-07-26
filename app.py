@@ -34,3 +34,13 @@ def clicked():
     # col.update({}, {'$set': {"clicks": 0}}, multi=True)
     
     return "Success"
+
+@app.route('/trending', methods=['GET'])
+def trending():
+    objects = col.find().sort([("clicks",-1)])
+    return_dict = []
+    for x in objects:
+        idn = x.get('_id')
+        image = x.get('img')
+        return_dict.append({"id":str(idn), "image":image})
+    return jsonify(return_dict)
