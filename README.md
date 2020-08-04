@@ -76,6 +76,7 @@ For this assignment, I have not used any external resources. The code is origina
 
 ## REFERENCES 
 
-[1]"Welcome to Flask — Flask Documentation (1.1.x)", Flask.palletsprojects.com, 2020. [Online]. Available: https://flask.palletsprojects.com/en/1.1.x/. [Accessed: 25- Jul- 2020].
-[2]"Consuming REST APIs In React With Fetch And Axios — Smashing Magazine", Smashing Magazine, 2020. [Online]. Available: https://www.smashingmagazine.com/2020/06/rest-api-react-fetch-axios/. [Accessed: 25- Jul- 2020].
-[3]2020. [Online]. Available: https://www.youtube.com/watch?v=Wf7-qnD1dNc. [Accessed: 25- Jul- 2020].
+[1]"Welcome to Flask — Flask Documentation (1.1.x)", Flask.palletsprojects.com, 2020. [Online]. Available: https://flask.palletsprojects.com/en/1.1.x/. [Accessed: 25- Jul- 2020]. <br>
+[2]"Consuming REST APIs In React With Fetch And Axios — Smashing Magazine", Smashing Magazine, 2020. [Online]. Available: https://www.smashingmagazine.com/2020/06/rest-api-react-fetch-axios/. [Accessed: 25- Jul- 2020]. <br>
+[3]2020. [Online]. Available: https://www.youtube.com/watch?v=Wf7-qnD1dNc. [Accessed: 25- Jul- 2020]. <br>
+[4] "Cloud: MongoDB Cloud", Cloud.mongodb.com, 2020. [Online]. Available: https://cloud.mongodb.com/v2/5f1797ea65745348da398735#metrics/replicaSet/5f179a821c815e25234e7b6f/explorer/affordly/posts/find. [Accessed: 25- Jul- 2020].
