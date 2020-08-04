@@ -69,15 +69,21 @@ def trending():
 def search():
     keyword=request.args['keyword']
     result_set=[]
+    id_checked=[]
     if keyword:
         try:
             objects = col.find({"title": {"$regex": keyword, "$options":'i'}, "isActive":True})
             for obj in objects:
-                result_set.append({"_id": str(obj.get('_id')), "img":obj.get('img'), "title":obj.get('title'), "description":obj.get('description')})
+                if str(obj.get('_id')) not in id_checked:
+                    result_set.append({"_id": str(obj.get('_id')), "img":obj.get('img'), "title":obj.get('title'), "description":obj.get('description')})
+                    id_checked.append(str(obj.get('_id')))
 
             objects1 = col.find({"description": {"$regex": keyword, "$options":'i'}, "isActive":True})
             for obj in objects1:
-                result_set.append({"_id": str(obj.get('_id')), "img":obj.get('img'), "title":obj.get('title'), "description":obj.get('description')})
+                if str(obj.get('_id')) not in id_checked:
+                    result_set.append({"_id": str(obj.get('_id')), "img":obj.get('img'), "title":obj.get('title'), "description":obj.get('description')})
+                    id_checked.append(str(obj.get('_id')))
+
         except Exception as e:
             print (str(e))
     if not result_set:
