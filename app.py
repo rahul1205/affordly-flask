@@ -73,11 +73,11 @@ def search():
         try:
             objects = col.find({"title": {"$regex": keyword, "$options":'i'}})
             for obj in objects:
-                result_set.append({"id": str(obj.get('_id')), "image":obj.get('img')})
+                result_set.append({"_id": str(obj.get('_id')), "img":obj.get('img'), "title":obj.get('title'), "description":obj.get('description')})
 
             objects1 = col.find({"description": {"$regex": keyword, "$options":'i'}})
             for obj in objects1:
-                result_set.append({"id": str(obj.get('_id')), "image":obj.get('img')})
+                result_set.append({"_0id": str(obj.get('_id')), "img":obj.get('img'), "title":obj.get('title'), "description":obj.get('description')})
         except Exception as e:
             print (str(e))
     if not result_set:
