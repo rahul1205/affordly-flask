@@ -63,3 +63,23 @@ def trending():
         image = x.get('img')
         return_dict.append({"id":str(idn), "image":image})
     return jsonify(return_dict)
+
+
+@app.route('/search', methods=['GET'])
+def search():
+    keyword=request.args['keyword']
+    result_set=[]
+    if keyword:
+        try:
+            objects = col.find({"title": {"$regex": keyword, "$options":'i'}})
+            for obj in objects:
+                result_set.append({"id": str(obj.get('_id')), "image":obj.get('img')})
+
+            objects1 = col.find({"description": {"$regex": keyword, "$options":'i'}})
+            for obj in objects1:
+                result_set.append({"id": str(obj.get('_id')), "image":obj.get('img')})
+        except Exception as e:
+            print (str(e))
+    if not result_set:
+        return jsonify({"message":"No results found"})
+    return jsonify(result_set)
